@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+
+development:
+  <<: *default
+  database: cat_catalogue_development
+  username: cat_catalogue
+  password: cat_catalogue
+
+test:
+  <<: *default
+  database: cat_catalogue_test
+  username: cat_catalogue
+  password: cat_catalogue
+
+production:
+  <<: *default
+  database: cat_catalogue_production
+  username: cat_catalogue
+  password: <%= ENV['CAT_CATALOGUE_DATABASE_PASSWORD'] %>
