@@ -1,0 +1,11 @@
+<h2>Cats</h2>
+<% @cats.each do |cat| %>
+  <div class="image-container">
+    <li><%= image_tag cat.url, style: 'height:150px;width:auto;' %></li>
+    <div class="image-name">
+      <p><%= link_to cat.breed.name, cats_path(breed_code: cat.breed.code) %></p>
+    </div>
+  </div>
+<% end %>
+<br>
+<%= paginate @cats %>

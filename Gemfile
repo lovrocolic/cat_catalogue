@@ -9,6 +9,7 @@ gem 'puma', '5.0.4'
 gem 'sass-rails', '6.0.0'
 gem 'turbolinks', '5.2.1'
 gem 'bootsnap', '1.4.6', require: false
+gem 'kaminari', '1.2.1'
 gem 'rest-client', '2.1.0'
 
 group :development, :test do
