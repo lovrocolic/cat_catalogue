@@ -9,6 +9,7 @@ gem 'puma', '5.0.4'
 gem 'sass-rails', '6.0.0'
 gem 'turbolinks', '5.2.1'
 gem 'bootsnap', '1.4.6', require: false
+gem 'rest-client', '2.1.0'
 
 group :development, :test do
   gem 'byebug', '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
