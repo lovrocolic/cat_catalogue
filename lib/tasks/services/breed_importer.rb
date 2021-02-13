@@ -7,7 +7,9 @@ class BreedImporter
       breed = JSON.parse import_breed id
 
       db_breed = Breed.find_by(code: breed['id'])
-      Breed.create!(name: breed['name'], code: breed['id']) unless db_breed
+      unless db_breed
+        Breed.create!(name: breed['name'], code: breed['id'], rarity: breed['rare'])
+      end
     end
   end
 
