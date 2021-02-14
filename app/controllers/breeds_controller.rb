@@ -1,4 +1,6 @@
 class BreedsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @breeds = BreedService.new(index_params).fetch
   end

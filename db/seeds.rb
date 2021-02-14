@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+role = Role.create!(name: 'admin')
+User.create!(email: 'admin@oddcamp.com', password: 'password', role: role)

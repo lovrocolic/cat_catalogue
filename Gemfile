@@ -6,6 +6,7 @@ ruby '2.6.3'
 gem 'rails', '6.1.0'
 gem 'pg', '1.2.3'
 gem 'puma', '5.0.4'
+gem 'devise'
 gem 'sass-rails', '6.0.0'
 gem 'turbolinks', '5.2.1'
 gem 'bootsnap', '1.4.6', require: false
