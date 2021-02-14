@@ -1,8 +1,6 @@
 class BreedsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
-  after_action -> { delete_related_cats }, only: :destroy
-
   def index
     @breeds = BreedService.new(index_params).fetch
   end
@@ -21,9 +19,5 @@ class BreedsController < ApplicationController
 
   def destroy_id
     params.require :id
-  end
-
-  def delete_related_cats
-    Cat.delete_by(breed_id: destroy_id)
   end
 end
