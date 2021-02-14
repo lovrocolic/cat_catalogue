@@ -10,11 +10,9 @@ class BreedService
                  .order(name: :asc)
                  .where(rarity_criteria)
 
-    if @breed_params[:search_string]
-      query.where(*search_criteria)
-    else
-      query
-    end
+    return query unless @breed_params[:search_string]
+
+    query.where(*search_criteria)
   end
 
   def search_criteria

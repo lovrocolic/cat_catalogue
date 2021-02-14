@@ -15,6 +15,9 @@ gem 'rest-client', '2.1.0'
 
 group :development, :test do
   gem 'byebug', '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '4.0.1'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
