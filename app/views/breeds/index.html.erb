@@ -1,0 +1,15 @@
+<h2>Breeds</h2>
+<% @breeds.each do |breed| %>
+  <div class="container">
+    <p><%= breed.name %></p>
+    <p class="count-container"><%= breed.cats_count %></p>
+  </div>
+<% end %>
+<br>
+<%= form_with url: "/breeds", method: :get do |form| %>
+  <%= form.label :search_string, "Search for:" %>
+  <%= form.text_field :search_string, value: params[:search_string] %>
+  <%= form.label :rarity, 'Rarity:' %>
+  <%= form.select :rarity, %w[0 1], selected: params[:rarity] %>
+  <%= form.submit "Search" %>
+<% end %>

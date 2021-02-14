@@ -1,0 +1,12 @@
+// Place all the styles related to the Cats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.container {
+  display: flex;
+  flex-direction:row;
+}
+
+.count-container {
+  margin-left: 20px;
+}
