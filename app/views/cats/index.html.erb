@@ -3,7 +3,10 @@
   <div class="image-container">
     <li><%= image_tag cat.url, style: 'height:150px;width:auto;' %></li>
     <div class="image-name">
-      <p><%= link_to cat.breed.name, cats_path(breed_code: cat.breed.code) %></p>
+      <p><%= link_to cat.breed&.name, cats_path(breed_code: cat.breed&.code) %></p>
+      <% if current_user&.is_admin %>
+        <%= button_to "Delete Cat", cat_path(cat), method: :delete, class:"button"  %>
+      <% end %>
     </div>
   </div>
 <% end %>

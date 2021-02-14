@@ -2,7 +2,10 @@
 <% @breeds.each do |breed| %>
   <div class="container">
     <p><%= breed.name %></p>
-    <p class="count-container"><%= breed.cats_count %></p>
+    <p class="count-container">Cats within the breed: <%= breed.cats_count %></p>
+    <% if current_user&.is_admin %>
+      <%= button_to "Delete breed", breed_path(breed), method: :delete, class:"button-breed"  %>
+    <% end %>
   </div>
 <% end %>
 <br>
