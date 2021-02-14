@@ -14,7 +14,7 @@ class BreedsController < ApplicationController
   private
 
   def index_params
-    @index_params ||= params.permit :search_string, :rarity
+    @index_params ||= params.permit :search_string, :rarity, :commit
   end
 
   def destroy_id
