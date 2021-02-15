@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe BreedsController do
   let(:breed1) { create :breed, rarity: 0, name: 'C_Test1' }
   let(:breed2) { create :breed, rarity: 1, name: 'B_Test2' }
-  let(:breed3) { create :breed, rarity: 1, name: 'A_Test2' }
+  let(:breed3) { create :breed, rarity: 1, name: 'A_Test3' }
   let(:cat1) { create :cat, breed: breed1 }
   let(:cat2) { create :cat, breed: breed2 }
   let(:cat3) { create :cat, breed: breed3 }
@@ -43,6 +43,12 @@ RSpec.describe BreedsController do
     it 'deletes the record from the DB' do
       expect { do_request }
         .to change { Breed.count }
+        .from(3).to(2)
+    end
+
+    it 'deletes the associated cats from the DB' do
+      expect { do_request }
+        .to change { Cat.count }
         .from(3).to(2)
     end
   end
